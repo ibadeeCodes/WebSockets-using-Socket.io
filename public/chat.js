@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:4000/')
+var socket = io.connect('https://chat-app99.herokuapp.com/')
 
 
 var output = document.querySelector('#output')
@@ -30,8 +30,7 @@ message.addEventListener('keyup', function() {
 
 socket.on('chat', function(data) {
     feedback.innerHTML = ''
-    output.innerHTML += `<p><strong> ${data.sender} : </strong> ${data.message}</p>`
-    
+    output.innerHTML += `<p><strong> ${data.sender} : </strong> ${data.message}</p>`  
 })
 
 socket.on('typing', function(data) {
